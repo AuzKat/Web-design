@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аузяк Екатерина | Веб-дизайнер</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+</head>
+<body>
+    <!-- Кнопка смены темы -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Сменить тему">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Мобильное меню -->
+    <nav class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Закрыть меню">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="mobile-nav-list">
+            <li><a href="#hero" class="nav-link">Главная</a></li>
+            <li><a href="#about" class="nav-link">О себе</a></li>
+            <li><a href="#skills" class="nav-link">Навыки</a></li>
+            <li><a href="#experience" class="nav-link">Опыт</a></li>
+            <li><a href="#education" class="nav-link">Образование</a></li>
+            <li><a href="#projects" class="nav-link">Проекты</a></li>
+            <li><a href="#contact" class="nav-link">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <!-- Основной контейнер -->
+    <div class="container">
+        <!-- Header с навигацией -->
+        <header class="header">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <span class="logo-text">AЕ</span>
+                    <span class="logo-subtext">Сайт-портфолио</span>
+                </a>
+                
+                <!-- Десктопное меню -->
+                <nav class="desktop-nav">
+                    <ul class="nav-list">
+                        <li><a href="#hero" class="nav-link">Главная</a></li>
+                        <li><a href="#about" class="nav-link">О себе</a></li>
+                        <li><a href="#skills" class="nav-link">Навыки</a></li>
+                        <li><a href="#experience" class="nav-link">Опыт</a></li>
+                        <li><a href="#education" class="nav-link">Образование</a></li>
+                        <li><a href="#projects" class="nav-link">Проекты</a></li>
+                        <li><a href="#contact" class="nav-link">Контакты</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Бургер-меню для мобильных -->
+                <button class="burger-menu" id="burgerMenu" aria-label="Открыть меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="greeting">Привет, я</span>
+                        <span class="name">Екатерина</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Веб-дизайнер с фокусом на создании современных, адаптивных веб-сайтов
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">Мои проекты</a>
+                        <a href="#contact" class="btn btn-secondary">Связаться</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="image-decoration"></div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <span>Прокрутите вниз</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- О себе -->
+        <section class="section about" id="about">
+            <div class="section-header">
+                <h2 class="section-title">О себе</h2>
+                <p class="section-subtitle">Немного информации обо мне</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Специализируюсь на разработке пользовательских интерфейсов с использованием современных технологий.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-text">Завершённых проектов</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-text">Года опыта</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-text">Довольных клиентов</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-info">
+                    <div class="info-card">
+                        <h3 class="info-card-title">Основная информация</h3>
+                        <ul class="info-list">
+                            <li>
+                                <strong>Имя:</strong>
+                                <span>Екатерина Аузяк</span>
+                            </li>
+                            <li>
+                                <strong>Город:</strong>
+                                <span>Санкт-Петербург, Россия</span>
+                            </li>
+                            <li>
+                                <strong>Телефон:</strong>
+                                <span>+7 (999) 123-45-67</span>
+                            </li>
+                            <li>
+                                <strong>Email:</strong>
+                                <span>e.auzyak@example.com</span>
+                            </li>
+                            <li>
+                                <strong>Доступность:</strong>
+                                <span>Открыта к предложениям</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Навыки -->
+        <section class="section skills" id="skills">
+            <div class="section-header">
+                <h2 class="section-title">Навыки</h2>
+                <p class="section-subtitle">Мои технические и профессиональные навыки</p>
+            </div>
+            <div class="skills-content">
+                <div class="skills-category">
+                    <h3 class="skills-category-title">Технические навыки</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">HTML5 / CSS3</span>
+                                <span class="skill-percent">45%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-percent">10%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Figma</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Adobe Illustrator</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Adobe Photoshop</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="88"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3 class="skills-category-title">Профессиональные навыки</h3>
+                    <div class="soft-skills">
+                        <span class="soft-skill">Коммуникация</span>
+                        <span class="soft-skill">Работа в команде</span>
+                        <span class="soft-skill">Тайм-менеджмент</span>
+                        <span class="soft-skill">Решение проблем</span>
+                        <span class="soft-skill">Адаптивность</span>
+                        <span class="soft-skill">Критическое мышление</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Образование -->
+        <section class="section education" id="education">
+            <div class="section-header">
+                <h2 class="section-title">Образование</h2>
+                <p class="section-subtitle">Мои учебные достижения</p>
+            </div>
+            <div class="education-content">
+                <div class="education-card">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-info">
+                        <h3 class="education-title">Cредне-профессиональное образование</h3>
+                        <h4 class="education-institution">Колледж технологий, моделирования и управления</h4>
+                        <div class="education-period">2018 - 2022</div>
+                        <p class="education-description">
+                            Специализация: Веб-технологии и промышленная графика
+                        </p>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <div class="education-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="education-info">
+                        <h3 class="education-title">Бакалавр информационных технологий</h3>
+                        <h4 class="education-institution">СПБГУПТд</h4>
+                        <div class="education-period">2022 - 2026</div>
+                        <p class="education-description">
+                            Основное направление: Прикладная информатика в дизайне
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- Проекты -->
+        <section class="section projects" id="projects">
+            <div class="section-header">
+                <h2 class="section-title">Проекты</h2>
+                <p class="section-subtitle">Мои последние работы</p>
+            </div>
+            <div class="projects-grid" id="projectsContainer">
+                <!-- Проекты будут добавляться динамически через JavaScript -->
+            </div>
+        </section>
+
+        <!-- Контакты -->
+        <section class="section contact" id="contact">
+            <div class="section-header">
+                <h2 class="section-title">Контакты</h2>
+                <p class="section-subtitle">Свяжитесь со мной</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:alex.petrov@example.com">e.auzyak@example.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Телефон</h3>
+                            <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Telegram</h3>
+                            <a href="https://t.me/alex_petrov" target="_blank">@eauzyak</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 class="form-title">Напишите мне</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                            <div class="error-message" id="nameError"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Ваш email" required>
+                            <div class="error-message" id="emailError"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Ваше сообщение" rows="5" required></textarea>
+                            <div class="error-message" id="messageError"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span>Отправить сообщение</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <div class="form-success" id="formSuccess">Сообщение отправлено успешно!</div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <span class="logo-text">AE</span>
+                        <span class="logo-subtext">Портфолио</span>
+                    </div>
+                </div>
+                
+                <div class="footer-tech">
+                    <h4>Техническая информация</h4>
+                    <div class="tech-details">
+                        <p><strong>Использована нейросеть:</strong> DeepSeek</p>
+                        <p><strong>Время выполнения:</strong> 45 минут</p>
+                        <p><strong>JS-функционал:</strong> Плавная смена темы + форма обратной связи с валидацией + бургер-меню + анимация при прокрутке</p>
+                        <p><strong>Адаптивность:</strong> Mobile First подход</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Быстрые ссылки</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#hero">Главная</a></li>
+                        <li><a href="#about">О себе</a></li>
+                        <li><a href="#skills">Навыки</a></li>
+                        <li><a href="#projects">Проекты</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Аузяк Екатерина. Все права защищены.</p>
+                <div class="social-links">
+                    <a href="https://github.com/alex-petrov" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/alex-petrov" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://t.me/alex_petrov" target="_blank" aria-label="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="mailto:alex.petrov@example.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
