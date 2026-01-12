@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo Dashboard | Исправленная версия</title>
+    <style>
+        /* ЭКСТРЕННЫЕ СТИЛИ ДЛЯ ИСПРАВЛЕНИЯ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0f172a;
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            background: linear-gradient(45deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .sidebar {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .dashboard {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-height: 500px;
+        }
+        
+        button {
+            background: #6366f1;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            transition: 0.3s;
+        }
+        
+        button:hover {
+            background: #4f46e5;
+            transform: translateY(-2px);
+        }
+        
+        .widget {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Neo Dashboard</h1>
+            <p>Интеллектуальный аналитический центр</p>
+        </div>
+        
+        <div class="content">
+            <div class="sidebar">
+                <h3>Создать виджет</h3>
+                <div>
+                    <button onclick="addWidget('todo')">📝 Список задач</button>
+                    <button onclick="addWidget('quote')">💬 Цитаты</button>
+                    <button onclick="addWidget('weather')">🌤️ Погода</button>
+                    <button onclick="addWidget('crypto')">💰 Криптовалюты</button>
+                </div>
+            </div>
+            
+            <div class="dashboard" id="dashboard">
+                <h3>Моя панель управления</h3>
+                <p>Добавляйте виджеты для создания своей панели</p>
+                
+                <div id="widgets-container"></div>
+            </div>
+        </div>
+    </div>
+    
+<!-- Вставьте этот код в вашу панель dashboard -->
+<div class="widget todo-widget" id="working-todo">
+    <div class="widget-header">
+        <h3><i class="fas fa-tasks"></i> Работающий список задач</h3>
+    </div>
+    <div class="widget-body">
+        <ul class="todo-list">
+            <li class="todo-item">
+                <input type="checkbox" class="todo-checkbox" onchange="this.nextElementSibling.classList.toggle('completed', this.checked)">
+                <span class="todo-text">Купить продукты</span>
+                <button class="todo-delete" onclick="this.parentElement.remove()">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </li>
+            <li class="todo-item">
+                <input type="checkbox" class="todo-checkbox" onchange="this.nextElementSibling.classList.toggle('completed', this.checked)">
+                <span class="todo-text">Сделать домашку</span>
+                <button class="todo-delete" onclick="this.parentElement.remove()">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </li>
+        </ul>
+        <form onsubmit="addTask(event)" style="display: flex; gap: 10px; margin-top: 20px;">
+            <input type="text" id="new-task" placeholder="Новая задача..." style="flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+            <button type="submit" style="background: #4CAF50; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
+                Добавить
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="widget quote-widget" id="working-quote">
+    <div class="widget-header">
+        <h3><i class="fas fa-quote-right"></i> Цитаты (работают!)</h3>
+    </div>
+    <div class="widget-body">
+        <p id="quote-text" style="font-style: italic; margin-bottom: 10px;">Нажми кнопку для новой цитаты</p>
+        <p id="quote-author" style="text-align: right; color: #666;"></p>
+        <button onclick="newQuote()" style="background: #2196F3; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; margin-top: 20px;">
+            Новая цитата
+        </button>
+    </div>
+</div>
+
+<script>
+    // Простой скрипт для задач
+    function addTask(e) {
+        e.preventDefault();
+        const input = document.getElementById('new-task');
+        const taskText = input.value.trim();
+        
+        if (taskText) {
+            const todoList = document.querySelector('.todo-list');
+            const newTask = document.createElement('li');
+            newTask.className = 'todo-item';
+            newTask.innerHTML = `
+                <input type="checkbox" class="todo-checkbox" onchange="this.nextElementSibling.classList.toggle('completed', this.checked)">
+                <span class="todo-text">${taskText}</span>
+                <button class="todo-delete" onclick="this.parentElement.remove()">
+                    <i class="fas fa-trash"></i>
+                </button>
+            `;
+            todoList.appendChild(newTask);
+            input.value = '';
+        }
+    }
+    
+    // Цитаты
+    const quotes = [
+        ["Лучший способ предсказать будущее — создать его.", "Питер Друкер"],
+        ["Не ждите. Время никогда не будет подходящим.", "Наполеон Хилл"],
+        ["Действие — основная ключевая черта любого успеха.", "Пабло Пикассо"],
+        ["Единственный способ делать великую работу — любить то, что делаешь.", "Стив Джобс"]
+    ];
+    
+    function newQuote() {
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        document.getElementById('quote-text').textContent = `"${randomQuote[0]}"`;
+        document.getElementById('quote-author').textContent = `— ${randomQuote[1]}`;
+    }
+    
+    // Загружаем первую цитату
+    newQuote();
+</script>
+</body>
+</html>
